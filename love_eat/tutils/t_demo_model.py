@@ -1,7 +1,7 @@
 # coding=utf-8
 
 '''
-Created on 2016�?12�?13�?
+Created on 2016�?12�?13�?
 
 @author: pangt
 '''
@@ -27,7 +27,7 @@ class TDemoPerson(object):
         self.birth = birth
         self.job = job
         self.addr = addr
-        self.toys = []  # 如果是对象类型数组，第一个�?�放入类
+        self.toys = []  
     
     def __unicode__(self):
         return self.name + "\t" + self.sex + "\t" + self.birth + "\t" + self.job + "\t" + str(self.addr.__dict__)

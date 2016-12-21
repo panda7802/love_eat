@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.static import serve
+from django import views
 
 import t_reg_login.views
-
+from love_eat import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index$', t_reg_login.views.t_reg),
+    url(r'^$', t_reg_login.views.index),
+    url(r'^index.html$', t_reg_login.views.index),
+    url(r'^reg.html$', t_reg_login.views.t_reg),
 ]

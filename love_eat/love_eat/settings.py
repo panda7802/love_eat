@@ -11,11 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+from tutils import tconf
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -25,6 +21,9 @@ SECRET_KEY = 'wf2@nd_&($z&2+5+!a+#+!l$%w#=ed7ytn+_j_%ts#%il%t^cn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    't_reg_login',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'love_eat.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.dirname(__file__), '../templates').replace('\\','/'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'love_eat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3_' + tconf.PRO_TYPE),
     }
 }
 
@@ -114,8 +114,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_URL = '/static/'
+STATIC_PATH = os.path.join(BASE_DIR, 'templates/static').replace('\\','/')
+# STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+STATICFILES_DIRS =  (
+    os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), '../static/css').replace('\\','/'),
+)
+
+ALLOWED_HOSTS = [u'192.168.3.229', u'123.206.122.234', u'127.0.0.1', u'www.pandafly.cn']
