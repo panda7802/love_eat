@@ -1,0 +1,14 @@
+﻿
+.icp {
+	margin:0px auto;
+	bottom: 40px;
+    font-size: 16px; 
+    text-align: center;
+} 
+
+.t_bottom {
+	position: fixed; /*or前面的是absolute就可以用*/  
+	bottom: 0px;
+	width: 100%;
+	margin-bottom: 40px;
+}
