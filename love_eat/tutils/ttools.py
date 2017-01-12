@@ -4,7 +4,8 @@
 基本工具
 @author: pangt
 '''
-from tutils.t_log import tlog
+from tutils.t_log import TLog
+import logging
 
 class TTools :
     
@@ -56,7 +57,7 @@ class TTools :
             de = str.decode("UTF-8").encode(char_code)
             res = de.encode("hex").upper()
         except Exception, e:
-            tlog.exception(e)
+            logging.exception(e)
         return res
     
     @classmethod

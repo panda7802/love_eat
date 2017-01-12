@@ -1,2 +1,3 @@
-function testJs() {
-}
+
+T_SUCCESS = 0
+T_FAILED = 1

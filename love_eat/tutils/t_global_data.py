@@ -11,13 +11,11 @@ from os.path import os
 from sys import platform
 
 from tutils.t_log import TLog
-from love_eat import settings
-
 
 class TGlobalData :
     
     plam = "unix"
-    FILE_PATH = settings.BASE_DIR + "/files/"
+    FILE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "/files/"
     
     @staticmethod
     def init():

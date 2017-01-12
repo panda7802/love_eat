@@ -48,7 +48,7 @@ class TJsonTools(json.JSONEncoder):
     
     @classmethod
     def tJsonEncode(c,obj):
-        str = TJsonTools().encode(ps)
+        str = TJsonTools().encode(obj)
         return  str;
 
 if "__main__" == __name__ :

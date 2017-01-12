@@ -10,8 +10,8 @@ Created on 20161219
 import logging
 from logging.handlers import RotatingFileHandler
 import traceback
-from love_eat.settings import BASE_DIR
 from time import sleep
+from tutils import tconf
 
 
 class TLog :
@@ -19,7 +19,7 @@ class TLog :
     @staticmethod
     def init():
         LOG_FORMAT = '%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s'
-        print "start init log " , BASE_DIR
+        print "start init log " , tconf.BASE_DIR
         # logging.basicConfig(level=logging.DEBUG)
         logging.basicConfig(level=logging.DEBUG,
                     format=LOG_FORMAT,
@@ -27,25 +27,13 @@ class TLog :
                     )   
           
         # 定义个RotatingFileHandler，最多备5个日志文件，每个日志文件10M
-        rthandler = RotatingFileHandler(BASE_DIR + '/log/tlog.log', maxBytes=10 * 1024 * 1024, backupCount=5)
+        rthandler = RotatingFileHandler(tconf.BASE_DIR + '/log/tlog.log', maxBytes=10 * 1024 * 1024, backupCount=5)
         rthandler.setLevel(logging.INFO)
         formatter = logging.Formatter(LOG_FORMAT)
         rthandler.setFormatter(formatter)
         logging.getLogger('').addHandler(rthandler)
         print "start init log over"
     
-#     def debug(self, msg):
-#         logging.debug(msg)
-#     
-#     def info(self, msg):
-#         logging.info(msg)
-#     
-#     def error(self, msg):
-#         logging.error(msg)
-#     
-#     def exception(self, e):
-#         logging.exception(e)
-
 if "__main__" == __name__ :
     TLog.init()
     try :

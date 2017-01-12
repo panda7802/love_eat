@@ -2,15 +2,24 @@
 
 from django.http.response import HttpResponse
 from django.shortcuts import render, render_to_response
+from t_reg_login.logic import t_family_reg
+import logging
+from tutils.tconf import T_SUCCESS
+from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-def t_reg(req):
-    print "aa"
-    res = HttpResponse('<h1>注册</h1>')
+def t_reg_view(req):
+    res = render_to_response('reg.html')
     return res
 
-# Create your views here.
-def index(req):
+def t_login_view(req):
+    res = render_to_response('login.html')
+    return res
+
+def t_index_view(req):
     res = render_to_response('index.html')
     return res
 
+def gen_yzm(req):
+    res = t_family_reg.logic_gen_yzm(req)
+    return res
+        

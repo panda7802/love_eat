@@ -23,7 +23,9 @@ from love_eat import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', t_reg_login.views.index),
-    url(r'^index.html$', t_reg_login.views.index),
-    url(r'^reg.html$', t_reg_login.views.t_reg),
+    url(r'^$', t_reg_login.views.t_index_view),
+    url(r'^index.html$', t_reg_login.views.t_index_view),
+    url(r'^reg.html$', t_reg_login.views.t_reg_view),
+    url(r'^login.html$', t_reg_login.views.t_login_view),
+    url(r'^gen_yzm$', t_reg_login.views.gen_yzm),
 ]
