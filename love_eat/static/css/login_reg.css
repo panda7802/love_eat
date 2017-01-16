@@ -1,0 +1,16 @@
+﻿
+.t_back.img.reg {
+    background-image: url("/static/img/kaoya.jpg");
+}
+
+.t_back.img.reg.t_cont {
+    opacity: 1;
+}
+
+.reg_td {
+    width: 150px;
+}
+
+.t_input {
+    font-size: 14pt;
+}

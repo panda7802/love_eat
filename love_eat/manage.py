@@ -8,7 +8,7 @@ from tutils.t_global_data import TGlobalData
 from tutils import tconf
 from tutils.t_log import TLog
 from django.conf.locale import el
-from tutils.t_yzm import clear_outtime_code_func
+from tutils.t_yzm import clear_overtime_code_func
 
 if __name__ == "__main__":
     print "Start ---------------------"
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         tconf.PRO_TYPE = tconf.PRO_TYPE_DEV
     else :
         tconf.PRO_TYPE = tconf.PRO_TYPE_PRD
-    clear_outtime_code_func()
+    # clear_overtime_code_func()
      
     print "type : " + tconf.PRO_TYPE
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "love_eat.settings")

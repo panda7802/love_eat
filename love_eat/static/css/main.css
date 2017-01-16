@@ -5,7 +5,7 @@
 	padding:0px
 }
 
-.button {
+.t_button {
     min-height: 1.5em;
     display: inline-block;
     padding: 6px 36px;
@@ -38,14 +38,14 @@
          -o-transition: all 0.1s linear;
             transition: all 0.1s linear;
 }
-.button:hover {
+.t_button:hover {
     -webkit-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
      -khtml-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
        /*-moz-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;*/
          -o-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
             box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
 }
-.button:active {
+.t_button:active {
     -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
      -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
        /*-moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;*/
@@ -71,10 +71,8 @@
          -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
 }
-.button:hover .shine {left: 24px;}
-.button:active .shine {opacity: 0;}
-
-.button.gray {background: #555;}
+.t_button:hover .shine {left: 24px;}
+.t_button:active .shine {opacity: 0;}
 
 .t_login {
 	margin: 0px 10px 10px 0px;
@@ -114,18 +112,23 @@
 	opacity:0.1;
 }
 
-.t_cont {
-	opacity:1;
-	z-index:2;
-	position: absolute;
-	text-align: center;
-}
-
 .t_back.img.index{
 	background-image: url("/static/img/kaoya.jpg") ;
 }
 
+
+.t_cont {
+	opacity:1;
+	z-index:2;
+    width: 100%;
+    height:100%;
+	position: absolute;
+	text-align: center;
+    /*background: #FFFFFF;*/
+}
+
+
 .t_yzm {
-	width: 100px;
+	/*width: 100px;*/
 	height: 30px;
 }
