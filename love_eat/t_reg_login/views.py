@@ -2,10 +2,11 @@
 
 from django.http.response import HttpResponse
 from django.shortcuts import render, render_to_response
-from t_reg_login.logic import t_family_reg
 import logging
-from tutils.tconf import T_SUCCESS
+import t_reg_logic
 from django.views.decorators.csrf import csrf_exempt
+
+from tutils.tjson import TJsonTools
 
 
 def t_reg_view(req):
@@ -24,13 +25,22 @@ def t_index_view(req):
 
 
 def gen_yzm(req):
-    res = t_family_reg.logic_gen_yzm(req)
+    res = t_reg_logic.logic_gen_yzm(req)
     return res
 
 
-def t_famliy_reg(req):
-    res = t_family_reg.logic_famili_reg(req)
-    logging.debug(res)
+@csrf_exempt
+def t_family_reg_func(req):
+    tmp_res = t_reg_logic.logic_family_reg(req)
+    tmp_res = TJsonTools.tJsonEncode(tmp_res)
+    logging.debug("t_family_reg_func : " + tmp_res)
+    res = HttpResponse(tmp_res)
     return res
 
-
+@csrf_exempt
+def t_family_login_func(req):
+    tmp_res = t_reg_logic.logic_family_login(req)
+    tmp_res = TJsonTools.tJsonEncode(tmp_res)
+    logging.debug("t_family_reg_func : " + tmp_res)
+    res = HttpResponse(tmp_res)
+    return res

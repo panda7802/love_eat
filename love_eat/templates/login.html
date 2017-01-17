@@ -3,15 +3,53 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <link rel="stylesheet" type="text/css" href="/static/css/login_reg.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/yzm.js"></script>
+    <script type="text/javascript" src="/static/js/funcs.js"></script>
+    <script type="text/javascript" src="/static/js/tools/md5.js"></script>
+    <script type="text/javascript" src="/static/js/t_reg.js"></script>
+    <script type="text/javascript" src="/static/js/tools/t_base_tools.js"></script>
     <title>登录</title>
 </head>
 
 <body class="body">
 
-	<div class="t_reg"><a href="./reg.html">注册</a></div>
+<div class="t_back img index"></div>
 
+<div class="t_login">
+    <div id="login_in_out" class="t_reg"><a href="./reg.html">注册</a></div>
+</div>
+<div class="t_cont" style="opacity:3">
+    <div style="height: 30%"></div>
+    <table style="text-align: left;margin:auto;font-size:18pt" cellpadding="5px">
+        <tr>
+            <td>家庭名称</td>
+            <td colspan="2"><input id="familyName" type="input" class="t_input" placeholder="请输入家庭名称"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td colspan="2"><input id="passwd" type="password" class="t_input" placeholder="请输入密码"></td>
+        </tr>
+        <tr>
+            <td>验证码</td>
+            <td><input type="input" id="yzm" placeholder="请输入4位小写字母" class="t_input"></td>
+            <td style="width: 100px"><img id="t_yzm" class="t_yzm" src="/static/img/loading.jpg" onclick='gen_yzm()'>
+            </td>
+        </tr>
+    </table>
 
+    <div class="t_button" onClick="check_login()">
+        登录
+    </div>
+</div>
 </body>
+<script type="text/javascript">
+    gen_yzm();
+</script>
+</body>
+
 
 </html>

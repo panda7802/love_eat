@@ -17,9 +17,9 @@ function gen_yzm() {
 			// dataType:"string",
 			timeout : 6000,
 			success:function(data) {
-				var yzm_res = new Function("return" + data)(); //转换后的JSON对象
+				var yzm_res = new Function("return " + data)(); //转换后的JSON对象
         		var res = yzm_res.res;
-        		var text = yzm_res.text; 
+        		var text = yzm_res.text;
         		var path = yzm_res.path;
         		if (T_SUCCESS != res) {
         			alert("生成验证码失败,请重试");	

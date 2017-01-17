@@ -5,24 +5,44 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     <script type="text/javascript" src="/static/js/funcs.js"></script>
+    <script type="text/javascript" src="/static/js/tools/t_base_tools.js"></script>
+    <script type="text/javascript" src="/static/js/t_reg.js"></script>
     <title>活着的记忆</title>
 </head>
 
 <body class="body">
 
-	<div class="t_back img index"></div>
+<div class="t_back img index"></div>
 
-	<div class="t_login"><a href="./login.html">登录</a></div>
+<div class="t_login">
+    <div id="family_name"></div>
+    <div id="login_in_out">登录</div>
+</div>
 
-	<div class="t_bottom" onclick="testJs()">
-		<div class="icp">
-			潘国天版权所有<br/>
-			<a href="http://www.miibeian.gov.cn">苏ICP备16055308号-2</a>
-		</div>
-	</div>
+<div class="t_bottom" onclick="testJs()">
+    <div class="icp">
+        潘国天版权所有<br/>
+        <a href="http://www.miibeian.gov.cn">苏ICP备16055308号-2</a>
+    </div>
+</div>
 
 
+<script type="application/javascript">
+    var sFamily = getCookie("db_family") + "";
+
+    if (sFamily.length > 0) {
+        document.getElementById("family_name").innerHTML = sFamily;
+        document.getElementById("login_in_out").onclick = logout;
+        document.getElementById("login_in_out").innerHTML = "退出";
+    } else {
+        document.getElementById("family_name").innerHTML = "游客";
+        document.getElementById("login_in_out").onclick = login;
+        document.getElementById("login_in_out").innerHTML = "登录";
+    }
+
+</script>
 
 </body>
+
 
 </html>

@@ -11,15 +11,17 @@ sex_choices = (
     ('1', '男'),
 )
 
+
 class Family(models.Model):
     """
     家庭名称
     """
-    name = models.CharField(max_length=128)#家庭名称
+    name = models.CharField(max_length=128,primary_key=True)#家庭名称
     passwd = models.CharField(max_length=128)#家庭密码
      
     def __unicode__(self):
         return TJsonTools.tJsonEncode(self)
+
 
 class Person(models.Model):
     """

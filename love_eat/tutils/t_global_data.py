@@ -34,3 +34,5 @@ class TGlobalData :
         '''
         res = (TGlobalData.PRO_TYPE == TGlobalData.PRO_TYPE_DEV)
         return res
+
+

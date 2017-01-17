@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^reg.html$', t_reg_login.views.t_reg_view),
     url(r'^login.html$', t_reg_login.views.t_login_view),
     url(r'^gen_yzm$', t_reg_login.views.gen_yzm),
-    url(r'^famili_reg$', t_reg_login.views.t_famliy_reg),
+    url(r'^family_reg$', t_reg_login.views.t_family_reg_func),
+    url(r'^family_login$', t_reg_login.views.t_family_login_func),
 ]
